@@ -4,26 +4,26 @@ import { Navbar, Nav } from "react-bootstrap";
 import Home from "./Home.js";
 import About from "./About.js";
 import Users from "./Users.js";
-// import { messaging, getToken } from "./firebase"; // Import named exports
+ import { messaging, getToken } from "./firebase"; // Import named exports
 
 import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
-// import { useEffect } from "react";
+ import { useEffect } from "react";
 
 function App() {
-  // useEffect(() => {
-  //   async function requestNotificationPermission() {
-  //     try {
-  //       await Notification.requestPermission();
-  //       const token = await getToken(messaging);
-  //       console.log('token', token);
-  //     } catch (error) {
-  //       console.log('error', error);
-  //     }
-  //   }
+  useEffect(() => {
+    async function requestNotificationPermission() {
+      try {
+        await Notification.requestPermission();
+        const token = await getToken(messaging);
+        console.log('token', token);
+      } catch (error) {
+        console.log('error', error);
+      }
+    }
 
-  //   // Call the function to request permission and get the token
-  //   requestNotificationPermission();
-  // }, []);
+    // Call the function to request permission and get the token
+    requestNotificationPermission();
+  }, []);
 
   return (
     <div className="App">
